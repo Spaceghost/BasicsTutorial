@@ -1,0 +1,89 @@
+modulesSettings:
+  src/Main.luna:
+    typeRepToVisMap:
+    - - tag: TCons
+        contents:
+        - Geo
+        - []
+      - - ! 'paper: centered'
+        - paper/paperCenter.html
+    breadcrumbsSettings:
+    - - items: []
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,0.0,0.0,1.0]]'
+          screenToLogical: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,0.0,0.0,1.0]]'
+          lastInverse: 0
+    - - items:
+        - halfCirc
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[96.0,160.0,0.0,1.0]]'
+          screenToLogical: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[-96.0,-160.0,0.0,1.0]]'
+          lastInverse: 2
+    - - items:
+        - increment
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,106.0,0.0,1.0]]'
+          screenToLogical: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,-106.0,0.0,1.0]]'
+          lastInverse: 0
+    - - items:
+        - logoBody
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[-653.0,-639.0,0.0,1.0]]'
+          screenToLogical: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[653.0,639.0,0.0,1.0]]'
+          lastInverse: 0
+    - - items:
+        - main
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[-1029.5,-434.5,0.0,1.0]]'
+          screenToLogical: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[1029.5,434.5,0.0,1.0]]'
+          lastInverse: 0
+  src/Logo.luna:
+    typeRepToVisMap:
+    - - tag: TCons
+        contents:
+        - Geo
+        - []
+      - - ! 'paper: centered'
+        - paper/paperCenter.html
+    breadcrumbsSettings:
+    - - items: []
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,0.0,0.0,1.0]]'
+          screenToLogical: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,0.0,0.0,1.0]]'
+          lastInverse: 0
+    - - items:
+        - halfCircle
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,0.0,0.0,1.0]]'
+          screenToLogical: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,0.0,0.0,1.0]]'
+          lastInverse: 0
+    - - items:
+        - hc
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[108.5,-258.0,0.0,1.0]]'
+          screenToLogical: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[-108.5,258.0,0.0,1.0]]'
+          lastInverse: 0
+    - - items:
+        - logo
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[0.6740717245108123,0.0,0.0,0.0],[0.0,0.6740717245108123,0.0,0.0],[0.0,0.0,1.0,0.0],[-141.99778322900198,508.6797850968064,0.0,1.0]]'
+          screenToLogical: ! '[[1.4835216545030434,0.0,0.0,0.0],[0.0,1.4835216545030434,0.0,0.0],[0.0,0.0,1.0,0.0],[210.65678631165352,-754.6374763990668,0.0,1.0]]'
+          lastInverse: 0
+    - - items:
+        - main
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[0.7955108085417296,0.0,0.0,0.0],[0.0,0.7955108085417296,0.0,0.0],[0.0,0.0,1.0,0.0],[-429.35509040337473,-12.442730206236774,0.0,1.0]]'
+          screenToLogical: ! '[[1.2570539447894171,0.0,0.0,0.0],[0.0,1.2570539447894171,0.0,0.0],[0.0,0.0,1.0,0.0],[539.722510106979,15.641183089700375,0.0,1.0]]'
+          lastInverse: 0
+    - - items:
+        - oldLogo
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[0.45265339079656103,0.0,0.0,0.0],[0.0,0.45265339079656103,0.0,0.0],[0.0,0.0,1.0,0.0],[-476.44739355539014,81.80838258015481,0.0,1.0]]'
+          screenToLogical: ! '[[2.209195866709936,0.0,0.0,0.0],[0.0,2.209195866709936,0.0,0.0],[0.0,0.0,1.0,0.0],[1052.5656125472901,-180.73074065830315,0.0,1.0]]'
+          lastInverse: 0
+    - - items:
+        - ring
+      - breadcrumbCameraSettings:
+          logicalToScreen: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,202.5,0.0,1.0]]'
+          screenToLogical: ! '[[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,-202.5,0.0,1.0]]'
+          lastInverse: 0

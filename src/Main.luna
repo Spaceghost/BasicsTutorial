@@ -1,0 +1,29 @@
+import Std.Base
+import Std.Graphics2D
+
+def halfCirc radius:
+    «27»circle1 = circle radius
+    «28»rectangle1 = rectangle 2.0*radius radius
+    «29»translate1 = rectangle1 . translate 0.0 (-0.5 * radius)
+    «30»difference1 = circle1 - translate1
+    difference1
+
+def logoBody radius:
+    «48»innerRadius = radius - 2.0
+    «49»halfRadius = innerRadius / 2.0
+    «35»halfCircle1 = halfCirc innerRadius
+    «42»leftRadius = halfRadius + 4.0
+    «37»circle1 = circle halfRadius
+    «44»circle2 = circle leftRadius
+    «45»translate2 = circle2 . translate -leftRadius 0.0
+    «38»translate1 = circle1 . translate halfRadius 0.0
+    «46»difference1 = halfCircle1 - translate2
+    «47»sum1 = difference1 + translate1
+    sum1
+
+def main:
+    «32»radius = 32.0
+    «31»innerRadius = 29.0
+    None
+
+### META {"metas":[{"marker":27,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":-224,"_vector2_x":-352}}}},{"marker":28,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":-96,"_vector2_x":-352}}}},{"marker":29,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":-96,"_vector2_x":-64}}}},{"marker":30,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":-160,"_vector2_x":160}}}},{"marker":32,"meta":{"_displayResult":false,"_selectedVisualizer":["base: json","base/json/json.html"],"_position":{"fromPosition":{"_vector2_y":-192,"_vector2_x":0}}}},{"marker":31,"meta":{"_displayResult":false,"_selectedVisualizer":["base: json","base/json/json.html"],"_position":{"fromPosition":{"_vector2_y":192,"_vector2_x":0}}}},{"marker":48,"meta":{"_displayResult":false,"_selectedVisualizer":["base: json","base/json/json.html"],"_position":{"fromPosition":{"_vector2_y":624,"_vector2_x":240}}}},{"marker":49,"meta":{"_displayResult":false,"_selectedVisualizer":["base: json","base/json/json.html"],"_position":{"fromPosition":{"_vector2_y":624,"_vector2_x":384}}}},{"marker":35,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":368,"_vector2_x":464}}}},{"marker":42,"meta":{"_displayResult":false,"_selectedVisualizer":["base: json","base/json/json.html"],"_position":{"fromPosition":{"_vector2_y":624,"_vector2_x":528}}}},{"marker":37,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":800,"_vector2_x":544}}}},{"marker":44,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":528,"_vector2_x":672}}}},{"marker":45,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":624,"_vector2_x":800}}}},{"marker":38,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":800,"_vector2_x":800}}}},{"marker":46,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":368,"_vector2_x":960}}}},{"marker":47,"meta":{"_displayResult":false,"_selectedVisualizer":["paper: centered","paper/paperCenter.html"],"_position":{"fromPosition":{"_vector2_y":624,"_vector2_x":1168}}}}]}
