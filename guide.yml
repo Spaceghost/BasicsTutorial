@@ -1,6 +1,6 @@
 steps:
   - title: Welcome to Luna!
-    description: In this tutorial you will learn the basics of using nodes and the interactive Luna editor.
+    description: In this tutorial you will learn the basics of using nodes and the interactive Luna editor. You can perform the actions as described in the tutorial yourself, or simply press Next and the guide will make them for you.
   - title: The Node Editor
     description: Luna Studio contains many different panes, with the code representation or the file treeview. For now, we'll focus on the visual editor. Click on it to start working.
     target:
