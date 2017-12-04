@@ -6,6 +6,11 @@ steps:
     target:
       className: luna-studio-window
       action: onclick
+  - title: Centering the view
+    description: There are some nodes created on the workspace before. Press H to center the workspace and clearly see all the elements present.
+    target:
+      className: luna-studio-mount
+      action: luna-studio:center-graph
   - title: Node explorer
     description: Position the cursor to the right of the existing nodes and press tab to open the Explorer. This is the control–center of Luna, allowing you to search for nodes, add them to the workspace and read the documentation.
     target:
