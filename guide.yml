@@ -1,38 +1,106 @@
 steps:
   - title: Welcome to Luna!
     description: In this tutorial you will learn the basics of using nodes and the interactive Luna editor. You can perform the actions as described in the tutorial yourself, or simply press `Next` and the guide will make them for you.
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: The Node Editor
     description: Luna Studio contains many different panes, with the code representation or the file treeview. For now, we'll focus on the visual editor. Click on it to start working.
     target:
       className: luna-studio-window
       action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Centering the view
     description: There are some nodes created on the workspace before. Press `H` to center the workspace and clearly see all the elements present.
     target:
       className: luna-studio-mount
       action: luna-studio:center-graph
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Node explorer
     description: Position the cursor to the right of the existing nodes and press `tab` to open the Explorer. This is the control–center of Luna, allowing you to search for nodes, add them to the workspace and read the documentation.
     target:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: '(192,-192)'
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.SearcherOpen
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Adding the first node.
     description: Type `circle`.
     target:
       className: luna-searcher__input
       action: value
       value: circle
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Adding the first node.
     description: Press the `down arrow` key to unselect Explorer's hints and use your input.
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-move-down
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.MoveDown
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Adding the first node.
     description: Press `enter` to add the node to the workspace.
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Your first connection.
     description: Click on the output port of the `radius` node to start a connection.
     target:
@@ -41,6 +109,18 @@ steps:
         - luna-port--o--single
         - luna-port__select
       action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
+        nodeName: radius
+        portId: OutPort 0
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Connecting the nodes.
     description: Click on the input port of the `circle1` node to finish connecting.
     target:
@@ -49,6 +129,18 @@ steps:
         - luna-port--i--1
         - luna-port__select
       action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
+        nodeName: circle1
+        portId: InPort 1
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Viewing the results.
     description: You have just created your first shape with the graphics library! Now click the eye icon to the right of `circle1` node's name, to toggle the visualisation.
     target:
@@ -57,71 +149,196 @@ steps:
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
+        nodeName: circle1
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Deselecting the node.
-    description: Before adding other nodes, we need to deselect the one we've been working with. Click on the node editor's background to deselect.
+    description: Before adding other nodes, we need to deselect the one we've been working with. Simply press `escape` to cancel selection.
     target:
-      className: luna-studio-window
-      action: onclick
+      className: luna-studio-mount
+      action: core:cancel
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Adding another circle.
     description: Now let's create the border of our logo. For starters, we'll need another, smaller circle. Position the cursor to the right of the `innerRadius` node and press `tab`.
     target:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: '(192,192)'
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.SearcherOpen
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Adding another circle.
     description: Type `circle`.
     target:
       className: luna-searcher__input
       action: value
       value: circle
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Adding another circle.
     description: Press the `down arrow` key to unselect Explorer's hints and use your input.
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-move-down
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.MoveDown
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Adding another circle.
     description: Press `enter`.
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Setting the radius.
     description: Connect the `innerRadius` node to the input of the newly created circle. Click on the output port of `innerRadius` to start connecting.
     target:
-        className:
-          - luna-node-name-innerradius
-          - luna-port--o--single
-          - luna-port__select
-        action: onclick
+      className:
+        - luna-node-name-innerradius
+        - luna-port--o--single
+        - luna-port__select
+      action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
+        nodeName: innerRadius
+        portId: OutPort 0
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Setting the radius
     description: Click on the input port of `circle2` node to finish the connection.
     target:
-        className:
-          - luna-node-name-circle2
-          - luna-port--i--1
-          - luna-port__select
-        action: onclick
-  - title: Deselecting the node.
-    description: Before adding other nodes, we need to deselect the one we've been working with. Click on the node editor's background to deselect.
-    target:
-      className: luna-studio-window
+      className:
+        - luna-node-name-circle2
+        - luna-port--i--1
+        - luna-port__select
       action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
+        nodeName: circle2
+        portId: InPort 1
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+  - title: Deselecting the node.
+    description: Before adding other nodes, we need to deselect the one we've been working with. Simply press `escape` to cancel selection.
+    target:
+      className: luna-studio-mount
+      action: core:cancel
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Making the border.
     description: Now that we have two circles of different sizes, we can subtract them to create the border. Position the cursor to the right of both circles and press `tab`.
     target:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: "(384,0)"
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.SearcherOpen
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Making the border.
     description: Type `circle1 - circle2`. Since this expression uses other nodes by name, it will result in an automatic connections to them.
     target:
       className: luna-searcher__input
       action: value
       value: circle1 - circle2
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Making the border.
     description: Press `enter`.
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Renaming the node.
     description: Double click the `difference1` node's name to rename it.
     target:
@@ -129,6 +346,17 @@ steps:
         - luna-node-name-difference1
         - luna-node__name--positioner
       action: ondblclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditName
+        nodeName: difference1
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Renaming the node.
     description: Set the name to `border`. It is important to keep the names meaningful, for the clarity of your project.
     target:
@@ -137,6 +365,16 @@ steps:
         - luna-searcher__input
       action: value
       value: border
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Renaming the node.
     description: Press `enter`.
     target:
@@ -144,6 +382,16 @@ steps:
         - luna-node-name-difference1
         - luna-searcher__input
       action: luna-studio:searcher-accept
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Viewing the results.
     description: Let's see how does our border look. Click the eye icon of the `border` node, to show the visualisation.
     target:
@@ -152,50 +400,140 @@ steps:
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
+        nodeName: border
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Deselecting the node.
-    description: Before adding other nodes, we need to deselect the one we've been working with. Click on the node editor's background to deselect.
+    description: Before adding other nodes, we need to deselect the one we've been working with. Simply press `escape` to cancel selection.
     target:
-      className: luna-studio-window
-      action: onclick
+      className: luna-studio-mount
+      action: core:cancel
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
   - title: Adding the body of our logo.
     description: We have prepared another node that draws the body of Luna logo. Press `tab` to use it.
     target:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: "(192,576)"
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.SearcherOpen
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Adding the body of our logo.
     description: To use the component type `logoBody innerRadius`. Again, we are using another node by name, so it will result in a connection.
     target:
       className: luna-searcher__input
       action: value
       value: logoBody innerRadius
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Adding the body of our logo.
     description: Press `enter`.
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Deselecting the node.
-    description: Before adding other nodes, we need to deselect the one we've been working with. Click on the node editor's background to deselect.
+    description: Before adding other nodes, we need to deselect the one we've been working with. Simply press `escape` to cancel selection.
     target:
-      className: luna-studio-window
-      action: onclick
+      className: luna-studio-mount
+      action: core:cancel
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Combining the blocks.
     description: Now that we have both the body and the border, we can combine them together. Position your cursor to the right of all other nodes and press `tab`.
     target:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: "(576,288)"
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.SearcherOpen
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Combining the blocks.
     description: Type `border + logoBody1` to create a node combining both shapes.
     target:
       className: luna-searcher__input
       value: border + logoBody1
       action: value
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Combining the blocks.
     description: Press `enter`.
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Viewing the results.
     description: Let's see the result! Click the eye icon to the right of `sum1` node's name, to toggle the visualisation.
     target:
@@ -204,6 +542,17 @@ steps:
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
+        nodeName: sum1
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Rotating the logo.
     description: Oh no! It seems like our logo has incorrect rotation. Let's fix that! Start by selecting the `sum1` node – just click on it.
     target:
@@ -211,41 +560,117 @@ steps:
         - luna-node-name-sum1
         - luna-node__body
       action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.NodeEvent\.Select
+        nodeName: sum1
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Rotating the logo.
     description: Now, with the node selected, press `tab`. When you bring up the Explorer with another node selected, it will display hints contextually and, after accepting the result, automatically connect the nodes.
     target:
       className: luna-studio-mount
       action: luna-studio:searcher-open
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.SearcherOpen
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Rotating the logo.
     description: Type `rotate 0.0`.
     target:
       className: luna-searcher__input
       action: value
       value: rotate 0.0
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Rotating the logo.
     description: Press `enter`.
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Viewing the results.
-    description: Let's see the result! Click the eye icon to the right of `sum1` node's name, to toggle the visualisation.
+    description: Let's see the result! Click the eye icon to the right of `rotate1` node's name, to toggle the visualisation.
     target:
       className:
         - luna-node-name-rotate1
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
+        nodeName: rotate1
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Expanding the node.
     description: Now press `enter` again with the `rotate1` node selected to expand it to a detailed view.
     target:
       className: luna-studio-mount
       action: luna-studio:expand-selected-nodes
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.Shortcut\.ExpandSelectedNodes
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Using input controls.
     description: Instead of connecting nodes, you can also set their values using various controls. Try playing around with the control for real numbers – simply drag it around to set a value. Try to figure out the correct rotation yourself. Click `Next` when you are done.
     target:
       className:
         - luna-node-name-rotate1
         - luna-ctrl--slider
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.PortEvent\.PortInitSlider
+        nodeName: rotate1
+        portId: InPort 1
+      - NodeEditor\.Event\.UI\.AppEvent\.Movement
+      - NodeEditor\.Event\.UI\.AppEvent\.MouseUp
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Changing the expression.
     description: You can also edit the node expression whenever you want – just double click it. Edit the expression of the `rotate1` node.
     target:
@@ -253,16 +678,52 @@ steps:
         - luna-node-name-rotate1
         - luna-node__expression
       action: ondblclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.PortEvent\.PortInitSlider
+        nodeName: rotate1
+        portId: InPort 1
+      - NodeEditor\.Event\.UI\.AppEvent\.Movement
+      - NodeEditor\.Event\.UI\.AppEvent\.MouseUp
+      - NodeEditor\.Event\.UI\.AppEvent\.Click
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Changing the expression.
     description: Change the rotation value in the expression to `30.0`.
     target:
       className: luna-searcher__input
       action: value
       value: sum1 . rotate 30.0
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditExpression
+        nodeName: rotate1
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Changing the expression.
     description: Press `enter` to accept.
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Congratulations!
     description: You have just completed your first project in Luna! We encourage you to play around with it a bit more – there's a lot more to discover. You can also click the Luna logo in the top left corner of the editor to bring up the Dashboard and check out other projects we've prepared for you or start a new one.
