@@ -277,6 +277,25 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+  - title: Viewing the results.
+    description: Let's see what happened so far. Click the eye icon of the `circle2` node, to show the visualisation.
+    target:
+      className:
+        - luna-node-name-circle2
+        - luna-node__name--positioner
+        - luna-ctrl-icon
+      action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
+        nodeName: border
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
   - title: Deselecting the node.
     description: Before adding other nodes, we need to deselect the one we've been working with. Simply press `escape` to cancel selection.
     target:
@@ -467,6 +486,25 @@ steps:
       - NodeEditor\.Event\.Shortcut\..*
     allow:
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
+      - NodeEditor\.Event\.UI\..*\.MouseEnter
+      - NodeEditor\.Event\.UI\..*\.MouseLeave
+      - NodeEditor\.Event\.UI\..*\.MouseMove
+      - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+  - title: Viewing the results.
+    description: Let's see how does the logo body look. Click the eye icon of the `logoBody1` node, to show the visualisation.
+    target:
+      className:
+        - luna-node-name-logobody1
+        - luna-node__name--positioner
+        - luna-ctrl-icon
+      action: onclick
+    block:
+      - NodeEditor\.Event\.UI\..*
+      - NodeEditor\.Event\.Shortcut\..*
+    allow:
+      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
+        nodeName: border
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -682,9 +720,8 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - regexp: NodeEditor\.Event\.UI\.PortEvent\.PortInitSlider
+      - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditExpression
         nodeName: rotate1
-        portId: InPort 1
       - NodeEditor\.Event\.UI\.AppEvent\.Movement
       - NodeEditor\.Event\.UI\.AppEvent\.MouseUp
       - NodeEditor\.Event\.UI\.AppEvent\.Click
@@ -703,8 +740,7 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditExpression
-        nodeName: rotate1
+      - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
