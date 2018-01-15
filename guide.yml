@@ -55,6 +55,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding the first node.
     description: Type `circle`.
     target:
@@ -71,6 +72,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding the first node.
     description: Press the `down arrow` key to unselect Explorer's hints and use your input.
     target:
@@ -86,6 +88,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding the first node.
     description: Press `enter` to add the node to the workspace.
     target:
@@ -101,6 +104,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Your first connection.
     description: Click on the output port of the `radius` node to start a connection.
     target:
@@ -121,6 +125,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Connecting the nodes.
     description: Click on the input port of the `circle1` node to finish connecting.
     target:
@@ -141,6 +146,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Viewing the results.
     description: You have just created your first shape with the graphics library! Now click the eye icon to the right of `circle1` node's name, to toggle the visualisation.
     target:
@@ -160,6 +166,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Deselecting the node.
     description: Before adding other nodes, we need to deselect the one we've been working with. Simply press `escape` to cancel selection.
     target:
@@ -175,6 +182,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding another circle.
     description: Now let's create the border of our logo. For starters, we'll need another, smaller circle. Position the cursor to the right of the `innerRadius` node and press `tab`.
     target:
@@ -191,6 +199,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding another circle.
     description: Type `circle`.
     target:
@@ -207,6 +216,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding another circle.
     description: Press the `down arrow` key to unselect Explorer's hints and use your input.
     target:
@@ -222,6 +232,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding another circle.
     description: Press `enter`.
     target:
@@ -237,6 +248,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Setting the radius.
     description: Connect the `innerRadius` node to the input of the newly created circle. Click on the output port of `innerRadius` to start connecting.
     target:
@@ -257,6 +269,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Setting the radius
     description: Click on the input port of `circle2` node to finish the connection.
     target:
@@ -277,6 +290,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Deselecting the node.
     description: Before adding other nodes, we need to deselect the one we've been working with. Simply press `escape` to cancel selection.
     target:
@@ -292,6 +306,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Making the border.
     description: Now that we have two circles of different sizes, we can subtract them to create the border. Position the cursor to the right of both circles and press `tab`.
     target:
@@ -308,6 +323,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Making the border.
     description: Type `circle1 - circle2`. Since this expression uses other nodes by name, it will result in an automatic connections to them.
     target:
@@ -324,6 +340,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Making the border.
     description: Press `enter`.
     target:
@@ -339,6 +356,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Renaming the node.
     description: Double click the `difference1` node's name to rename it.
     target:
@@ -357,6 +375,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Renaming the node.
     description: Set the name to `border`. It is important to keep the names meaningful, for the clarity of your project.
     target:
@@ -375,6 +394,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Renaming the node.
     description: Press `enter`.
     target:
@@ -392,6 +412,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Viewing the results.
     description: Let's see how does our border look. Click the eye icon of the `border` node, to show the visualisation.
     target:
@@ -411,6 +432,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Deselecting the node.
     description: Before adding other nodes, we need to deselect the one we've been working with. Simply press `escape` to cancel selection.
     target:
@@ -425,6 +447,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding the body of our logo.
     description: We have prepared another node that draws the body of Luna logo. Press `tab` to use it.
     target:
@@ -441,6 +464,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding the body of our logo.
     description: To use the component type `logoBody innerRadius`. Again, we are using another node by name, so it will result in a connection.
     target:
@@ -457,6 +481,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Adding the body of our logo.
     description: Press `enter`.
     target:
@@ -472,6 +497,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Deselecting the node.
     description: Before adding other nodes, we need to deselect the one we've been working with. Simply press `escape` to cancel selection.
     target:
@@ -487,6 +513,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Combining the blocks.
     description: Now that we have both the body and the border, we can combine them together. Position your cursor to the right of all other nodes and press `tab`.
     target:
@@ -503,6 +530,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Combining the blocks.
     description: Type `border + logoBody1` to create a node combining both shapes.
     target:
@@ -519,6 +547,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Combining the blocks.
     description: Press `enter`.
     target:
@@ -534,6 +563,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Viewing the results.
     description: Let's see the result! Click the eye icon to the right of `sum1` node's name, to toggle the visualisation.
     target:
@@ -553,6 +583,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Rotating the logo.
     description: Oh no! It seems like our logo has incorrect rotation. Let's fix that! Start by selecting the `sum1` node – just click on it.
     target:
@@ -571,6 +602,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Rotating the logo.
     description: Now, with the node selected, press `tab`. When you bring up the Explorer with another node selected, it will display hints contextually and, after accepting the result, automatically connect the nodes.
     target:
@@ -586,6 +618,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Rotating the logo.
     description: Type `rotate 0.0`.
     target:
@@ -602,6 +635,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Rotating the logo.
     description: Press `enter`.
     target:
@@ -617,6 +651,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Viewing the results.
     description: Let's see the result! Click the eye icon to the right of `rotate1` node's name, to toggle the visualisation.
     target:
@@ -636,6 +671,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Expanding the node.
     description: Now press `enter` again with the `rotate1` node selected to expand it to a detailed view.
     target:
@@ -651,6 +687,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Using input controls.
     description: Instead of connecting nodes, you can also set their values using various controls. Try playing around with the control for real numbers – simply drag it around to set a value. Try to figure out the correct rotation yourself. Click `Next` when you are done.
     target:
@@ -671,6 +708,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Changing the expression.
     description: You can also edit the node expression whenever you want – just double click it. Edit the expression of the `rotate1` node.
     target:
@@ -693,6 +731,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Changing the expression.
     description: Change the rotation value in the expression to `30.0`.
     target:
@@ -710,6 +749,7 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Changing the expression.
     description: Press `enter` to accept.
     target:
@@ -725,5 +765,6 @@ steps:
       - NodeEditor\.Event\.UI\..*\.MouseMove
       - NodeEditor\.Event\.UI\.AppEvent\.Wheel
       - NodeEditor\.Event\.UI\.VisualizationEvent\.SelectVisualizer
+      - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Congratulations!
     description: You have just completed your first project in Luna! We encourage you to play around with it a bit more – there's a lot more to discover. You can also click the Luna logo in the top left corner of the editor to bring up the Dashboard and check out other projects we've prepared for you or start a new one.
