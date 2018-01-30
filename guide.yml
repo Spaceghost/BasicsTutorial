@@ -56,8 +56,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -79,8 +77,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -100,8 +96,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.MoveDown
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -121,8 +115,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -147,8 +139,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
         nodeName: radius
         portId: OutPort 0
@@ -175,8 +165,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
         nodeName: circle1
         portId: InPort 1
@@ -202,8 +190,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: circle1
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
@@ -244,8 +230,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -267,8 +251,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -288,8 +270,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.MoveDown
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -309,8 +289,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -335,8 +313,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
         nodeName: innerRadius
         portId: OutPort 0
@@ -363,8 +339,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
         nodeName: circle2
         portId: InPort 1
@@ -390,8 +364,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: circle2
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
@@ -432,8 +404,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -455,8 +425,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -476,8 +444,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -500,8 +466,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditName
         nodeName: difference1
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
@@ -526,8 +490,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -549,8 +511,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -574,8 +534,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: border
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
@@ -614,8 +572,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -637,8 +593,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -658,8 +612,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -683,8 +635,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: logoBody1
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
@@ -725,8 +675,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -748,8 +696,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -769,8 +715,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -794,8 +738,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: sum1
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
@@ -819,8 +761,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.NodeEvent\.Select
         nodeName: sum1
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
@@ -841,8 +781,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -864,8 +802,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -885,8 +821,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -910,8 +844,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: rotate1
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
@@ -932,8 +864,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.ExpandSelectedNodes
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -956,8 +886,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.PortInitSlider
         nodeName: rotate1
         portId: InPort 1
@@ -984,8 +912,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditExpression
         nodeName: rotate1
       - NodeEditor\.Event\.UI\.AppEvent\.Movement
@@ -1011,8 +937,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -1032,8 +956,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
       - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
