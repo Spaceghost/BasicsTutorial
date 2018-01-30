@@ -5,7 +5,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -20,7 +19,6 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -31,13 +29,10 @@ steps:
     target:
       className: luna-studio-mount
       action: luna-studio:center-graph
-    expected:
-      - NodeEditor\.Event\.Shortcut\.CenterGraph
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -50,14 +45,13 @@ steps:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: '(192,-192)'
-    expected:
-      - NodeEditor\.Event\.Shortcut\.SearcherOpen
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -70,15 +64,13 @@ steps:
       className: luna-searcher__input
       action: value
       value: circle
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-        searcherInput: circle
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -90,14 +82,13 @@ steps:
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-move-down
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.MoveDown
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.MoveDown
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -109,14 +100,13 @@ steps:
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -125,10 +115,6 @@ steps:
       - NodeEditor\.Event\.Shortcut\.CenterGraph
   - title: Your first connection.
     description: Click on the output port of the `radius` node to start a connection.
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
-        nodeName: radius
-        portId: OutPort 0
     target:
       className:
         - luna-node-name-radius
@@ -139,10 +125,11 @@ steps:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
         nodeName: radius
         portId: OutPort 0
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -157,18 +144,15 @@ steps:
         - luna-port--i--1
         - luna-port__select
       action: onclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
-        nodeName: circle1
-        portId: InPort 1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
         nodeName: circle1
         portId: InPort 1
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -183,16 +167,14 @@ steps:
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
-        nodeName: circle1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: circle1
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -204,14 +186,13 @@ steps:
     target:
       className: luna-studio-mount
       action: core:cancel
-    expected:
-      - NodeEditor\.Event\.Shortcut\.Cancel
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
       - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
+      - NodeEditor\.Event\.Shortcut\.Cancel
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -224,14 +205,13 @@ steps:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: '(192,192)'
-    expected:
-      - NodeEditor\.Event\.Shortcut\.SearcherOpen
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -244,15 +224,13 @@ steps:
       className: luna-searcher__input
       action: value
       value: circle
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-        searcherInput: circle
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -264,14 +242,13 @@ steps:
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-move-down
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.MoveDown
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.MoveDown
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -283,14 +260,13 @@ steps:
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -305,18 +281,15 @@ steps:
         - luna-port--o--single
         - luna-port__select
       action: onclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
-        nodeName: innerRadius
-        portId: OutPort 0
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
         nodeName: innerRadius
         portId: OutPort 0
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -331,18 +304,15 @@ steps:
         - luna-port--i--1
         - luna-port__select
       action: onclick
-    expected:
     block:
-      - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
-        nodeName: circle2
-        portId: InPort 1
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.Click
         nodeName: circle2
         portId: InPort 1
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -357,16 +327,14 @@ steps:
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
-        nodeName: circle2
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
-        nodeName: circle2
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
+        nodeName: border
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -378,14 +346,13 @@ steps:
     target:
       className: luna-studio-mount
       action: core:cancel
-    expected:
-      - NodeEditor\.Event\.Shortcut\.Cancel
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
       - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
+      - NodeEditor\.Event\.Shortcut\.Cancel
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -398,14 +365,13 @@ steps:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: "(384,0)"
-    expected:
-      - NodeEditor\.Event\.Shortcut\.SearcherOpen
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -418,15 +384,13 @@ steps:
       className: luna-searcher__input
       action: value
       value: circle1 - circle2
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-        searcherInput: circle1 - circle2
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -438,14 +402,13 @@ steps:
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -459,16 +422,14 @@ steps:
         - luna-node-name-difference1
         - luna-node__name--positioner
       action: ondblclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditName
-        nodeName: difference1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditName
         nodeName: difference1
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -483,15 +444,13 @@ steps:
         - luna-searcher__input
       action: value
       value: border
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-        searcherInput: border
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -505,14 +464,13 @@ steps:
         - luna-node-name-difference1
         - luna-searcher__input
       action: luna-studio:searcher-accept
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -527,16 +485,14 @@ steps:
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
-        nodeName: border
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: border
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -548,14 +504,13 @@ steps:
     target:
       className: luna-studio-mount
       action: core:cancel
-    expected:
-      - NodeEditor\.Event\.Shortcut\.Cancel
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
       - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
+      - NodeEditor\.Event\.Shortcut\.Cancel
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -566,14 +521,13 @@ steps:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: "(192,576)"
-    expected:
-      - NodeEditor\.Event\.Shortcut\.SearcherOpen
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -586,15 +540,13 @@ steps:
       className: luna-searcher__input
       action: value
       value: logoBody innerRadius
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-        searcherInput: logoBody innerRadius
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -606,14 +558,13 @@ steps:
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -628,16 +579,14 @@ steps:
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
-        nodeName: logoBody1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
-        nodeName: logoBody1
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
+        nodeName: border
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -649,14 +598,13 @@ steps:
     target:
       className: luna-studio-mount
       action: core:cancel
-    expected:
-      - NodeEditor\.Event\.Shortcut\.Cancel
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
       - NodeEditor\.Event\.Shortcut\.Cancel
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
+      - NodeEditor\.Event\.Shortcut\.Cancel
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -669,14 +617,13 @@ steps:
       className: luna-studio-mount
       action: luna-studio:searcher-open
       payload: "(576,288)"
-    expected:
-      - NodeEditor\.Event\.Shortcut\.SearcherOpen
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -689,15 +636,13 @@ steps:
       className: luna-searcher__input
       value: border + logoBody1
       action: value
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-        searcherInput: border + logoBody1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -709,14 +654,13 @@ steps:
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -731,16 +675,14 @@ steps:
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
-        nodeName: sum1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: sum1
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -754,16 +696,14 @@ steps:
         - luna-node-name-sum1
         - luna-node__body
       action: onclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.NodeEvent\.Select
-        nodeName: sum1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.NodeEvent\.Select
         nodeName: sum1
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -775,14 +715,13 @@ steps:
     target:
       className: luna-studio-mount
       action: luna-studio:searcher-open
-    expected:
-      - NodeEditor\.Event\.Shortcut\.SearcherOpen
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.SearcherOpen
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -795,15 +734,13 @@ steps:
       className: luna-searcher__input
       action: value
       value: rotate 0.0
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-        searcherInput: rotate 0.0
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -815,14 +752,13 @@ steps:
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -837,16 +773,14 @@ steps:
         - luna-node__name--positioner
         - luna-ctrl-icon
       action: onclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
-        nodeName: rotate1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.VisualizationEvent\.ToggleVisualizations
         nodeName: rotate1
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -858,14 +792,13 @@ steps:
     target:
       className: luna-studio-mount
       action: luna-studio:expand-selected-nodes
-    expected:
-      - NodeEditor\.Event\.Shortcut\.ExpandSelectedNodes
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.Shortcut\.ExpandSelectedNodes
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -878,18 +811,15 @@ steps:
       className:
         - luna-node-name-rotate1
         - luna-ctrl--slider
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.PortEvent\.PortInitSlider
-        nodeName: rotate1
-        portId: InPort 1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.PortEvent\.PortInitSlider
         nodeName: rotate1
         portId: InPort 1
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\.AppEvent\.Movement
       - NodeEditor\.Event\.UI\.AppEvent\.MouseUp
       - NodeEditor\.Event\.UI\..*\.MouseEnter
@@ -905,19 +835,17 @@ steps:
         - luna-node-name-rotate1
         - luna-node__expression
       action: ondblclick
-    expected:
-      - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditExpression
-        nodeName: rotate1
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - regexp: NodeEditor\.Event\.UI\.NodeEvent\.EditExpression
         nodeName: rotate1
       - NodeEditor\.Event\.UI\.AppEvent\.Movement
       - NodeEditor\.Event\.UI\.AppEvent\.MouseUp
       - NodeEditor\.Event\.UI\.AppEvent\.Click
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -930,15 +858,13 @@ steps:
       className: luna-searcher__input
       action: value
       value: sum1 . rotate 30.0
-    expected: 
-      - regexp: NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-        searcherInput: sum1 . rotate 30.0
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.InputChanged
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
@@ -950,14 +876,13 @@ steps:
     target:
       className: luna-searcher__input
       action: luna-studio:searcher-accept
-    expected:
-      - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
     block:
       - NodeEditor\.Event\.UI\..*
       - NodeEditor\.Event\.Shortcut\..*
     allow:
+      - NodeEditor\.Event\.Shortcut\.Cancel
+      - NodeEditor\.Event\.UI\.SearcherEvent\..*
       - NodeEditor\.Event\.UI\.SearcherEvent\.Accept
-      - NodeEditor\.Event\.UI\.AppEvent\.Resize
       - NodeEditor\.Event\.UI\..*\.MouseEnter
       - NodeEditor\.Event\.UI\..*\.MouseLeave
       - NodeEditor\.Event\.UI\..*\.MouseMove
